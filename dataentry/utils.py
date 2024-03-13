@@ -8,7 +8,7 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 
 def get_all_custom_models():
-    default_models = ['ContentType', 'Session', 'LogEntry', 'Group', 'Permission', 'User']
+    default_models = ['ContentType', 'Session', 'LogEntry', 'Group', 'Permission', 'User', 'Upload']
     # Try to get all the apps
     custom_models = []
     for model in apps.get_models():
