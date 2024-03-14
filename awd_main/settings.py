@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dataentry',
     'uploads',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +147,6 @@ DEFAULT_FROM_EMAIL = 'Auto Reply from Developer <developer.arun16@gmail.com>'
 DEFAULT_TO_EMAIL = 'asgautam19@gmail.com'
 
 # DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240000000
+
+# Crispy form django
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
