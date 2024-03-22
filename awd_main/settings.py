@@ -12,7 +12,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool) # True or False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -29,6 +29,9 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'emails',
+    'ckeditor',
+    "anymail",
+
 ]
 
 MIDDLEWARE = [
@@ -136,14 +139,14 @@ CELERY_BROKER_URL = 'redis://localhost:7000'
 
 # Email Configuration
 
-EMAIL_BACKEND = 'dataentry.backend.email.EmailBackend'
+# EMAIL_BACKEND = 'dataentry.backend.email.EmailBackend'
 
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT', cast=int)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+# EMAIL_HOST = config('EMAIL_HOST')
+# EMAIL_PORT = config('EMAIL_PORT', cast=int)
+# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
 DEFAULT_FROM_EMAIL = 'Auto Reply from Developer <developer.arun16@gmail.com>'
 DEFAULT_TO_EMAIL = 'asgautam19@gmail.com'
 
@@ -151,3 +154,19 @@ DEFAULT_TO_EMAIL = 'asgautam19@gmail.com'
 
 # Crispy form django
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+# Ckeditor Height Configs
+CKEDITOR_CONFIGS = {
+    'default': {
+        'height': 200,
+    },
+}
+
+#Custom sendinblue email config
+EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
+ANYMAIL = {
+    "SENDINBLUE_API_KEY": config("SENDINBLUE_API_KEY"),
+}
+
+CSRF_TRUSTED_ORIGINS = ['https://805d-111-93-185-188.ngrok-free.app']
+BASE_URL = 'https://805d-111-93-185-188.ngrok-free.app'
