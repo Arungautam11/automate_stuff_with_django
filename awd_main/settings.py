@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'emails',
     'ckeditor',
     "anymail",
+    'image_compression',
 
 ]
 
