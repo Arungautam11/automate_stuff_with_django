@@ -35,7 +35,7 @@
     <!-- As a link -->
     <nav class="navbar navbar-light bg-light">
         <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}"><h2>Django.</h2></a>
+        <a class="navbar-brand" href="{% url 'home' %}"><h2>DjangoX.</h2></a>
 
         {% if user.is_authenticated %}
         <!--- Show logout button -->
@@ -55,6 +55,5 @@
     {% block content %}
     <!-- All the html main content will go here -->
     {% endblock %}
-
 </body>
 </html>
